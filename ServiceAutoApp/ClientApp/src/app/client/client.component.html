@@ -1,0 +1,34 @@
+<h1 id="tableLabel">Clienti</h1>
+
+<p>This component demonstrates fetching clienti from the server.</p>
+
+<button class="btn btn-primary" [routerLink]="['/clienti-add']">Add clienti</button>
+
+
+<p *ngIf="!clienti"><em>Loading...</em></p>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="clienti">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nume</th>
+      <th>Prenume</th>
+      <th>Locatia</th>
+      <th>TipDefectiune</th>
+      <th>TipMasina</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let client of clienti">
+      <td>{{ client.id }}</td>
+      <td>{{ client.name }}</td>
+      <td>{{ client.prenume }}</td>
+      <td>{{ client.locatia }}</td>
+      <td>{{ client.tipDefectiune }}</td>
+      <td>{{ client.tipMasina }}</td>
+      <td><button class="btn btn-primary" (click)="deleteClient(client)">delete</button></td>
+      <td><a href="/clienti-update?id={{client.id}}" class="btn btn-primary">update</a></td>
+    </tr>
+  </tbody>
+</table>

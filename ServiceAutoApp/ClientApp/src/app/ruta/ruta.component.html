@@ -1,0 +1,26 @@
+<h1 id="tableLabel">Rute</h1>
+
+<p>This component demonstrates fetching rute from the server.</p>
+
+<button class="btn btn-primary" [routerLink]="['/ruta-add']">Add ruta</button>
+
+<p *ngIf="!rute"><em>Loading...</em></p>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="rute">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Distanta</th>
+      <th>Timp</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let ruta of rute">
+      <td>{{ ruta.id }}</td>
+      <td>{{ ruta.distanta }}</td>
+      <td>{{ ruta.timp }}</td>
+      <td><button class="btn btn-primary" (click)="deleteRuta(ruta)">delete</button></td>
+    </tr>
+  </tbody>
+</table>

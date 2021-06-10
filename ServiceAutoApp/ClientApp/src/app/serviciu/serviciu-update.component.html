@@ -1,0 +1,19 @@
+<<div *ngIf="serviciu">
+
+  <h1 id="tableLabel">Add serviciu</h1>
+
+  DenumireServiciu:
+  <br />
+  <input [(ngModel)]="serviciu.denumireServiciu" />
+  <br />
+  Pret:
+  <br />
+  <input [(ngModel)]="serviciu.pret" />
+  <br />
+  TipMasinaNecesara:
+  <br />
+  <input [(ngModel)]="serviciu.tipMasinaNecesara" />
+  <br />
+
+  <button class="btn btn-primary" (click)="saveServiciu()">Save updates</button> <br /> <br />
+</div>

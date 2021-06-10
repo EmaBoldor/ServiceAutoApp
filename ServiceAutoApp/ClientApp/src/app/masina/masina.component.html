@@ -1,0 +1,27 @@
+<h1 id="tableLabel">Masini</h1>
+
+<p>This component demonstrates fetching masini from the server.</p>
+
+<button class="btn btn-primary" [routerLink]="['/masina-add']">Add masina</button>
+
+<p *ngIf="!masini"><em>Loading...</em></p>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="masini">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>TipMasina</th>
+      <th>Locatia</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let masina of masini">
+      <td>{{ masina.id }}</td>
+      <td>{{ masina.tipMasina }}</td>
+      <td>{{ masina.locatia }}</td>
+      <td><button class="btn btn-primary" (click)="deleteMasina(masina)">delete</button></td>
+      <td><a href="/clienti-update?id={{client.id}}" class="btn btn-primary">update</a></td>
+    </tr>
+  </tbody>
+</table>

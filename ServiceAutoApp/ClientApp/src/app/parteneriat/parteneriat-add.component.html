@@ -1,0 +1,17 @@
+<div *ngIf="parteneriat">
+
+  <h1 id="tableLabel">Add parteneriate</h1>
+
+  Firma:
+  <br />
+  <input [(ngModel)]="parteneriat.firma" />
+  <br />
+  Piese:
+  <br />
+  <input [(ngModel)]="parteneriat.piese" />
+  <br />
+
+
+  <button class="btn btn-primary" (click)="saveParteneriat()">Save Parteneriat</button>
+
+</div>

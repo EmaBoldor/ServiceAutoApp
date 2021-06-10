@@ -1,0 +1,17 @@
+<div *ngIf="masina">
+
+  <h1 id="tableLabel">Add masini</h1>
+
+  TipMasina:
+  <br />
+  <input [(ngModel)]="masina.tipMasina" />
+  <br />
+  Locatia:
+  <br />
+  <input [(ngModel)]="masina.locatia" />
+  <br />
+
+
+  <button class="btn btn-primary" (click)="saveMasina()">Save Masina</button>
+
+  </div>

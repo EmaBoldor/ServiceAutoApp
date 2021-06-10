@@ -1,0 +1,27 @@
+<h1 id="tableLabel">Parteneriat</h1>
+
+<p>This component demonstrates fetching parteneriate from the server.</p>
+
+<button class="btn btn-primary" [routerLink]="['/parteneriat-add']">Add parteneriat</button>
+
+<p *ngIf="!parteneriate"><em>Loading...</em></p>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="parteneriate">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Firma</th>
+      <th>Piese</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let parteneriat of parteneriate">
+      <td>{{ parteneriat.id }}</td>
+      <td>{{ parteneriat.firma }}</td>
+      <td>{{ parteneriat.piese }}</td>
+      <td><button class="btn btn-primary" (click)="deleteParteneriat(parteneriat)">delete</button></td>
+      <td><a href="/parteneriate-update?id={{parteneriat.id}}" class="btn btn-primary">update</a></td>
+    </tr>
+  </tbody>
+</table>

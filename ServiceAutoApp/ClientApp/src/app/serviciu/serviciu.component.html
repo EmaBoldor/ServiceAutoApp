@@ -1,0 +1,29 @@
+<h1 id="tableLabel">Servicii</h1>
+
+<p>This component demonstrates fetching servicii from the server.</p>
+
+<button class="btn btn-primary" [routerLink]="['/serviciu-add']">Add serviciu</button>
+
+<p *ngIf="!servicii"><em>Loading...</em></p>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="servicii">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>DenumireServiciu</th>
+      <th>Pret</th>
+      <th>TipMasinaNecesara</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let serviciu of servicii">
+      <td>{{ serviciu.id }}</td>
+      <td>{{ serviciu.denumireServiciu }}</td>
+      <td>{{ serviciu.pret }}</td>
+      <td>{{ serviciu.tipMasinaNecesara }}</td>
+      <td><button class="btn btn-primary" (click)="deleteServiciu(serviciu)">delete</button></td>
+      <td><a href="/serviciu-update?id={{serviciu.id}}" class="btn btn-primary">update</a></td>
+    </tr>
+  </tbody>
+</table>
