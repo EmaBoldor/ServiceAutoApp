@@ -12,7 +12,6 @@ export class ClientComponent  {
 
   public clienti: Client[];
 
-  //columnsToDisplay: string[] = ['nume', 'prenume', 'locatia', 'tipDefectiune', 'tipMasina'];
 
   constructor(private http: HttpClient, @Inject('BASE_URL') private baseUrl: string) {
     this.loadClienti();

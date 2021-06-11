@@ -13,6 +13,16 @@ export class ClientAddComponent  {
 
   public client: Client ;
 
+  //constructor(
+  //  private http: HttpClient,
+  //  @Inject('BASE_URL') private baseUrl: string,
+  //  private router: Router) { this.client = <Client>{}; }
+
+  //public saveClient() {
+  //  this.http.post(this.baseUrl + 'api/clienti', this.client).subscribe(result => {
+  //    this.router.navigateByUrl("/clienti");
+  //  }, error => console.error(error))
+  //}
   constructor(
     private http: HttpClient,
     @Inject('BASE_URL') private baseUrl: string,
@@ -23,7 +33,6 @@ export class ClientAddComponent  {
       this.router.navigateByUrl("/clienti");
     }, error => console.error(error))
   }
-
 }
 
 

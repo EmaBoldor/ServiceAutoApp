@@ -14,16 +14,16 @@ export class ParteneriatComponent {
   public parteneriate: Parteneriat[];
 
   constructor(private http: HttpClient, @Inject('BASE_URL') private baseUrl: string) {
-    this.loadParteneriate();
+    this.loadParteneriat();
   }
 
   public deleteParteneriat(parteneriat: Parteneriat) {
     this.http.delete(this.baseUrl + 'api/parteneriate/' + parteneriat.id).subscribe(result => {
-      this.loadParteneriate();
+      this.loadParteneriat();
     }, error => console.error(error))
   }
 
-  loadParteneriate() {
+  loadParteneriat() {
     this.http.get<Parteneriat[]>(this.baseUrl + 'api/parteneriate').subscribe(result => {
       this.parteneriate = result;
     }, error => console.error(error));

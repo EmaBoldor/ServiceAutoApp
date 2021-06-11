@@ -17,12 +17,12 @@ export class ClientUpdateComponent  {
   ngOnInit() {
     this.routers.queryParams.subscribe(param => {
       this.param = param;
-      this.loadClienti();
+      this.loadClient();
     });
   }
   constructor(private http: HttpClient, @Inject('BASE_URL') private baseUrl: string, private routers: ActivatedRoute, private router: Router) { }
 
-  loadClienti() {
+  loadClient() {
     this.http.get<Client>(this.baseUrl + 'api/clienti/' + this.param.id).subscribe(result => {
       this.client = result;
     }, error => console.error(error));

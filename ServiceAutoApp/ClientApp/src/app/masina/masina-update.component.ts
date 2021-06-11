@@ -17,18 +17,18 @@ export class MasinaUpdateComponent  {
   ngOnInit() {
     this.routers.queryParams.subscribe(param => {
       this.param = param;
-      this.loadMasini();
+      this.loadMasina();
     });
   }
   constructor(private http: HttpClient, @Inject('BASE_URL') private baseUrl: string, private routers: ActivatedRoute, private router: Router) { }
 
-  loadMasini() {
+  loadMasina() {
     this.http.get<Masina>(this.baseUrl + 'api/masini/' + this.param.id).subscribe(result => {
       this.masina = result;
     }, error => console.error(error));
   }
 
-  public saveMasini() {
+  public saveMasina() {
     this.http.put(this.baseUrl + 'api/masini/' + this.masina.id, this.masina).subscribe(result => {
       this.router.navigateByUrl("/masini");
     }, error => console.error(error));

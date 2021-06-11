@@ -17,12 +17,12 @@ export class ParteneriatUpdateComponent  {
   ngOnInit() {
     this.routers.queryParams.subscribe(param => {
       this.param = param;
-      this.loadParteneriate();
+      this.loadParteneriat();
     });
   }
   constructor(private http: HttpClient, @Inject('BASE_URL') private baseUrl: string, private routers: ActivatedRoute, private router: Router) { }
 
-  loadParteneriate() {
+  loadParteneriat() {
     this.http.get<Parteneriat>(this.baseUrl + 'api/parteneriate/' + this.param.id).subscribe(result => {
       this.parteneriat = result;
     }, error => console.error(error));
